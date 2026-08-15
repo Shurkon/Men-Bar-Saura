@@ -1,0 +1,179 @@
+:root {
+  --color-bg: #fdf8f3;
+  --color-bg-alt: #ffffff;
+  --color-text: #2b1c14;
+  --color-text-muted: #6b5b4f;
+  --color-primary: #d9622b;
+  --color-primary-dark: #b84e1f;
+  --color-border: #ecdfd3;
+  --shadow: 0 4px 14px rgba(43, 28, 20, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1c1512;
+    --color-bg-alt: #241b17;
+    --color-text: #f3e9e0;
+    --color-text-muted: #c2ab9c;
+    --color-primary: #f0824a;
+    --color-primary-dark: #d9622b;
+    --color-border: #3a2c24;
+    --shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-end;
+  background-image: linear-gradient(to bottom, rgba(20, 12, 8, 0.15), rgba(20, 12, 8, 0.75)), var(--hero-img);
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__overlay {
+  padding: 2rem 1.25rem;
+  color: #fff;
+}
+
+.hero__title {
+  margin: 0 0 0.25rem;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hero__tagline {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Sections */
+.section {
+  padding: 2rem 1.25rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.section__title {
+  font-size: 1.5rem;
+  margin: 0 0 1.25rem;
+  color: var(--color-primary);
+}
+
+/* Carta */
+.carta__categoria {
+  margin-bottom: 1.5rem;
+}
+
+.carta__categoria-title {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.4rem;
+}
+
+.carta__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carta__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.carta__item:last-child {
+  border-bottom: none;
+}
+
+.carta__nombre {
+  color: var(--color-text);
+}
+
+.carta__precio {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Imágenes */
+.section--imagenes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding-top: 0;
+}
+
+.imagenes__foto {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* Reseña */
+.section--resena {
+  text-align: center;
+  background: var(--color-bg-alt);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1.75rem 1.25rem;
+}
+
+.resena__texto {
+  margin: 0 0 1rem;
+  color: var(--color-text);
+}
+
+.resena__boton {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.resena__boton:hover,
+.resena__boton:active {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1.5rem 1.25rem 2.5rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.footer a {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+}
